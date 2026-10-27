@@ -2,7 +2,7 @@
 
 Ruimtevaartgame in een alternatieve geschiedenis, gemaakt voor iPhone/iPad in de browser.
 
-- **Spelen:** https://woltergrooves.github.io/space/ (zet het via Safari → Deel → "Zet op beginscherm" op je beginscherm)
+- **Spelen:** https://long-race.vercel.app (zet het via Safari → Deel → "Zet op beginscherm" op je beginscherm)
 - **Roadmap & beslissingen:** [docs/ROADMAP.md](docs/ROADMAP.md)
 
 ## Lokaal draaien

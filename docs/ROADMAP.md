@@ -5,7 +5,7 @@
 ## Werkafspraken
 - **Nieuwe ideeën eerst ter goedkeuring.** Claude stelt voor en bouwt pas als het idee is goedgekeurd.
 - **Zuinig met de limiet.** We werken in kleine, speelbare stappen. Claude doet zelf een korte visuele check met screenshots; jij beoordeelt het gevoel op je iPhone.
-- **Geen betaalde diensten zonder overleg.** Hosting gebeurt gratis via GitHub Pages.
+- **Geen betaalde diensten zonder overleg.** Hosting gebeurt gratis via Vercel (Hobby), automatisch bij elke push naar main.
 - **Elke mijlpaal staat in versiebeheer** en de laatste werkende versie blijft online.
 
 ## Genomen beslissingen (aanbevolen keuzes, op 27-10-2026 met "ja" bevestigd)
