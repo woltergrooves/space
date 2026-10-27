@@ -1,0 +1,2 @@
+{ "name": "Long Race", "short_name": "Long Race", "start_url": "./", "display": "fullscreen", "orientation": "any",
+  "background_color": "#000000", "theme_color": "#000000", "icons": [{ "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }] }
