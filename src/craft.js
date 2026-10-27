@@ -92,5 +92,9 @@ export function buildCraft() {
   const windowLight = new THREE.PointLight(0xffa956, 0.7, 2.5, 2);
   windowLight.position.copy(conePoint(1.75, Math.PI, 0.6).p); g.add(windowLight);
 
-  return { group: g, yellow, greyMetal };
+  // Servicemodule als losse groep, zodat hij afgestoten kan worden
+  const sm = new THREE.Group(); sm.name = 'sm';
+  for (const c of [...g.children]) if (c.position.y < -0.3) sm.add(c);
+  g.add(sm);
+  return { group: g, sm, yellow, greyMetal, foilMat, darkMetal, hullMat, white };
 }

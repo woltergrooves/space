@@ -42,7 +42,14 @@ Een capsule en een astronaut in een lage baan (400 km), met een volledige omloop
 
 **Wat ik van jou nodig heb:** speel het op je iPhone en vertel me: haalt het een vloeiend aantal fps (rechtsboven)? Hoe voelt de sfeer? Wat werkt wel en wat niet?
 
-### M1: Eerste volledige spelcyclus (volgende)
+### M1: Eerste volledige spelcyclus ✅ gebouwd · 🧪 headless getest door Claude · ⏳ wacht op jouw iPhone-test
+Speelbaar: hangar (trappen, motoren, tanks, live Δv-balk en waarschuwingen) → lancering met duimgas en stuur-assistent → baan (circuleren met autopiloot en automatische tijdversnelling) → missie (ruimtewandeling met krantenfoto, satelliet Merel uitzetten, of testvlucht) → terugkeer (terugkeerbrand, servicemodule afstoten, hitteschild, parachute, landing in zee) → vluchtrapport (telemetriegrafiek, logboek, vlieg-erfgoed, budget) → grondtests om motoren te verbeteren. Daarbij: kroniek met foto's, en hervatten midden in een vlucht.
+- Motorstoringen worden altijd 3,5 s vooraf gewaarschuwd (trilling). Tegenmaatregel: gas onder 70%. Een storing levert data op, wat de betrouwbaarheid sneller laat stijgen.
+- Een abortus redt de bemanning: de assistent scheidt de capsule als er geen baan haalbaar is.
+- Schaal: de aarde heeft een straal van 2124 km (1:3). Een stabiele baan begint bij een laagste punt van ≥ 60 km, de atmosfeer reikt tot 70 km.
+- **Placeholders, eerlijk benoemd:** geen geluid. Er is geen rook of uitlaatpluim, alleen een vlam. Elke landing telt als landing in zee. Het platform staat op een "eiland". De astronaut is altijd dezelfde. Sommige teksten en de balans zijn nog ruw.
+
+Oorspronkelijk plan M1:
 Bouwen → lanceren → baan → missie → terugkeer → telemetrie → verbeteren.
 1. **Hangar:** onderdelen kiezen in een schuifmenu onderaan, met een live balk voor het snelheidsbudget (Δv) en de stuwkracht-gewichtsverhouding (TWR).
 2. **Lancering:** stuwkracht met je duim, de assistent stuurt de draaiing (*gravity turn*), trappen scheiden.

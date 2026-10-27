@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Long Race">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-512.png">
+<title>Long Race — sfeertest</title>
+<style>
+  :root { --ui: rgba(14,16,20,0.62); --line: rgba(255,240,215,0.18); --txt: #f1ead9; --dim: #b9b09c; }
+  html, body { margin: 0; height: 100%; background: #000; color: var(--txt); overflow: hidden;
+    font-family: "Avenir Next", "Helvetica Neue", system-ui, sans-serif; -webkit-user-select: none; user-select: none; }
+  #c { position: fixed; inset: 0; width: 100%; height: 100%; touch-action: none; display: block; }
+  .hud { position: fixed; left: calc(14px + env(safe-area-inset-left)); top: calc(10px + env(safe-area-inset-top)); pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8); transition: opacity .4s; }
+  .hud .t { font-size: 12px; letter-spacing: .18em; color: var(--dim); }
+  .hud .t b { color: var(--txt); font-weight: 600; }
+  #clock { font: 600 17px/1.3 ui-monospace, "SF Mono", Menlo, monospace; margin-top: 4px; }
+  #status { font-size: 13px; color: var(--dim); margin-top: 2px; }
+  #fps { position: fixed; right: calc(14px + env(safe-area-inset-right)); top: calc(12px + env(safe-area-inset-top));
+    font: 12px ui-monospace, Menlo, monospace; color: var(--dim); pointer-events: none; transition: opacity .4s; }
+  .bar { position: fixed; left: 0; right: 0; bottom: calc(12px + env(safe-area-inset-bottom)); display: flex; gap: 8px;
+    justify-content: center; flex-wrap: wrap; padding: 0 12px; transition: opacity .4s, transform .4s; }
+  .bar button { min-height: 46px; padding: 0 16px; border-radius: 23px; border: 1px solid var(--line); background: var(--ui);
+    color: var(--txt); font: 600 15px/1 inherit; font-family: inherit; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .bar button:active { background: rgba(60,55,45,0.8); }
+  #toast { position: fixed; left: 50%; bottom: calc(76px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(10px);
+    max-width: min(88vw, 460px); text-align: center; background: var(--ui); border: 1px solid var(--line); border-radius: 14px;
+    padding: 10px 14px; font-size: 14px; line-height: 1.35; opacity: 0; transition: opacity .4s, transform .4s; pointer-events: none;
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  #toast.on { opacity: 1; transform: translateX(-50%); }
+  body.clean .hud, body.clean #fps, body.clean .bar { opacity: 0; pointer-events: none; }
+  body.clean .bar { transform: translateY(20px); }
+  #err { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; padding: 24px; text-align: center; }
+</style>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud">
+  <div class="t"><b>LONG RACE</b> · M0 SFEERTEST</div>
+  <div id="clock">T+ 00:00:00</div>
+  <div id="status">—</div>
+</div>
+<div id="fps"></div>
+<div class="bar">
+  <button id="bCam">Camera</button>
+  <button id="bTime">Tijd</button>
+  <button id="bQ">Kwaliteit</button>
+  <button id="bHide" aria-label="Verberg knoppen">Kijk</button>
+</div>
+<div id="toast"></div>
+<div id="err"></div>
+<script type="module" src="src/m0.js"></script>
+<script>
+  addEventListener('error', (e) => { const el = document.getElementById('err'); el.style.display = 'flex'; el.textContent = 'Er ging iets mis: ' + e.message; });
+</script>
+</body>
+</html>

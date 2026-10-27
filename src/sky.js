@@ -141,6 +141,7 @@ vec3 surface(vec3 q, vec3 n, vec3 rd){
   vec3 cw = vec3(fbm(cq * 0.5, 3), fbm(cq * 0.5 + 4.0, 3), 0.0);
   float cf = fbm(cq + cw.xyx * 1.6, uOct) + (fbm(q * 70.0 + uTime * 0.004, 3) - 0.5) * 0.12;
   float cl = smoothstep(0.535, 0.64, cf) * 0.95;
+  cl *= smoothstep(0.0015, 0.008, uAlt); // vanaf de grond zie je wolken niet als 'grond'
 
   float ndl = dot(n, uSun);
   vec3 T = sunTrans(n * 1.0004);
